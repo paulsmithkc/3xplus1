@@ -1,0 +1,28 @@
+{
+  "name": "3xplus1",
+  "version": "1.0.0",
+  "description": "Problem described here https://www.youtube.com/watch?v=094y1Z2wpJg&amp;pp=sAQA",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulsmithkc/3xplus1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paulsmithkc/3xplus1/issues"
+  },
+  "homepage": "https://github.com/paulsmithkc/3xplus1#readme",
+  "keywords": [
+    "math",
+    "sequence",
+    "exploration",
+    "analysis",
+    "abstract"
+  ],
+  "author": "Paul Smith",
+  "scripts": {
+    "longest": "node longest.js 4 1000"
+  },
+  "dependencies": {
+    "debug": "^4.3.2",
+    "dotenv": "^10.0.0"
+  }
+}
