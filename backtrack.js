@@ -10,22 +10,20 @@ while (queue.length) {
 
   if (!map.has(cur)) {
     map.set(cur, chain);
-  } else if (map.get(cur).length > chain.length) {
-    map.set(cur, chain);
-  }
 
-  if (chain.length >= limit) {
-    // stop exploring this chain, because we have explored far enough
-  } else if (cur <= 1 && chain.length > 0) {
-    // stop exploring this chain, beacause we have reached the end
-  } else {
-    const a = cur * 2n;
-    const b = (cur - 1n) / 3n;
-    if (a % 2n === 0n) {
-      queue.push({ cur: a, prev: cur, length: chain.length + 1 });
-    }
-    if (b % 2n !== 0n) {
-      queue.push({ cur: b, prev: cur, length: chain.length + 1 });
+    if (chain.length >= limit) {
+      // stop exploring this chain, because we have explored far enough
+    } else if (cur <= 1 && chain.length > 0) {
+      // stop exploring this chain, beacause we have reached the end
+    } else {
+      const a = cur * 2n;
+      const b = (cur - 1n) / 3n;
+      if (a % 2n === 0n) {
+        queue.push({ dir: 0, cur: a, prev: cur, length: chain.length + 1 });
+      }
+      if (b % 2n !== 0n) {
+        queue.push({ dir: 1, cur: b, prev: cur, length: chain.length + 1 });
+      }
     }
   }
 }
@@ -49,9 +47,12 @@ console.log('  nodesep=0.1');
 console.log('  page="8.5,11"');
 console.log('  pagedir=TL');
 console.log('  node [shape=oval]');
+console.log(`  ${start} [color=blue]`);
 for (const chain of map.values()) {
   if (chain.prev) {
-    console.log(`  ${chain.cur} -> ${chain.prev}`);
+    const color = chain.dir ? 'red' : 'green';
+    console.log(`  ${chain.cur} -> ${chain.prev} [color=${color}]`);
+    console.log(`  ${chain.cur} [color=${color}]`);
   }
 }
 console.log('}');
