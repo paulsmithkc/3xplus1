@@ -19,7 +19,8 @@
   ],
   "author": "Paul Smith",
   "scripts": {
-    "longest": "node longest.js 4 1000"
+    "longest": "node longest.js 4 1000",
+    "test": "node test.js 4"
   },
   "dependencies": {
     "debug": "^4.3.2",

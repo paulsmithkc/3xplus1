@@ -1,6 +1,6 @@
 const start = BigInt(process.argv[2] || '4');
-console.log(`following the sequence starting at ${start}`);
-console.log(start);
+console.log(`following the sequence starting at ${start}\n`);
+console.log(start.toString());
 
 // iterate through the sequence
 let count = 1n;
@@ -14,4 +14,4 @@ for (; x !== 1n; ++count) {
   console.log(x.toString());
 }
 
-console.log(`${count} numbers in this sequence`);
+console.log(`\n${count} numbers in this sequence`);
