@@ -21,11 +21,14 @@
   "scripts": {
     "test": "node test.js 4",
     "longest": "node longest.js 4 1000",
-    "backtrack": "node backtrack.js 4 10"
+    "backtrack": "node backtrack.js 100 15 > backtrack.gv && dot backtrack.gv -Tpdf -o backtrack.pdf"
   },
   "dependencies": {
     "debug": "^4.3.2",
     "dotenv": "^10.0.0",
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.2"
   }
 }
